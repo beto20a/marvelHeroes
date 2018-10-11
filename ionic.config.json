@@ -1,0 +1,7 @@
+{
+  "name": "marvel_comics",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
