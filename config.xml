@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MarveComics</name>
+    <name>MarvelHeroes</name>
     <description>App using the Marvel Api.</description>
     <author email="beto20a@gmail.com" href="mailto:beto20a@gmail.com/">Beto Rodrigues</author>
     <content src="index.html" />
