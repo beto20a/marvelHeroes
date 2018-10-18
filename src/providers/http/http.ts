@@ -19,8 +19,8 @@ https://developer.marvel.com/
 @Injectable()
 export class HttpProvider {
   private baseApi: string = "http://gateway.marvel.com/v1/public";
-  private privateKeyApi: string = "ced11cd0ce50b5117b087ee7b3b6a9f9efebda4f"; // chave privada vai aqui
-  private publicKeyApi: string = "130f268e7d50877048de4e027e5199fb"; //chave pública vai aqui
+  private privateKeyApi: string = ""; // chave privada vai aqui
+  private publicKeyApi: string = ""; //chave pública vai aqui
   private hashApi: string = "";
   private dateApi: string = "";
 
