@@ -1,0 +1,56 @@
+page-comics {
+  .item h2
+   {
+    font-style: italic;
+    font-weight: bold;
+  }
+    h3
+   {
+    font-style: italic;
+    font-weight: bold;
+    padding-top:10px;
+  }
+
+
+  .characters .list {
+    padding: 0px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  .characters .item {
+    min-height: 2rem;
+    border: 1px solid white;
+  }
+  .characters ion-label {
+    padding: 2px;
+    margin: 3px 3px 3px 3px;
+    font-size: 1.25rem;
+  }
+
+  .characters .item-inner {
+    padding-left:5px;
+    background-color: color($colors, dark);
+    color: color($colors, light);
+  }
+
+  .characters h3.lista_personagens {
+    text-align: center;
+    height: 25px;
+    margin-top: 20px;
+    margin-bottom:10px;
+    margin-left:17px;
+    margin-right:16px;
+    padding-top: 3px;
+    background-color: color($colors, dark);
+    color: color($colors, light);
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .sobre{
+    background-color:color($colors,primary);
+    color: color($colors, light);
+  }
+  .sobre .titulo{
+    font-style:italic;
+  }
+}

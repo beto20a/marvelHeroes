@@ -10,5 +10,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+entrar():void{
+  this.navCtrl.setRoot('TabMenuPage');
+}
 }

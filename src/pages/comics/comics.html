@@ -1,0 +1,77 @@
+<!--
+  Generated template for the ComicsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      HQs
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="background_pages" padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Puxe para atualizar" refreshingSpinner="circles"
+      refreshingText="Atualizando..."></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img [src]="hero.thumbnail.path+'.'+hero.thumbnail.extension">
+      </ion-thumbnail>
+      <h2 text-wrap>{{hero.name}}</h2>
+    </ion-item>
+    <ion-card-content>
+      <div *ngIf="hero.description" class="sobre">
+        <p><span class="titulo">Sobre este personagem:</span></p>
+        <p>
+          {{hero.description}}
+        </p>
+      </div>
+      <p *ngIf="hero.comics.available==1">Veja abaixo a HQ com a participacao do personagem <strong>{{hero.name}}</strong></p>
+      <p *ngIf="hero.comics.available>1">Veja abaixo todas as <strong>{{hero.comics.available}}</strong> HQs com a
+        participacao do personagem <strong>{{hero.name}}</strong></p>
+      <p *ngIf="!hero.comics.available">{{hero.name}} nao participa de nenhuma HQ</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let comic of comicsList">
+    <ion-item>
+      <ion-avatar item-left>
+        <img *ngIf="comic.thumbnail.path != 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'" [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension">
+      </ion-avatar>
+      <h3>{{comic.title}}</h3>
+    </ion-item>
+    <img padding *ngIf="comic.thumbnail.path != 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'"
+      [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension">
+    <p text-center *ngIf="comic.thumbnail.path == 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'">SEM
+      IMAGEM</p>
+    <ion-card-content>
+      <p>{{comic.description}}</p>
+    </ion-card-content>
+    <div class="characters">
+      <h3 class="lista_personagens">Personagens neste HQ</h3>
+      <ion-list>
+        <ion-item *ngFor="let character of comic.characters.items">
+          {{character.name}}
+          <button style="font-size:10px;" ion-button item-end clear (click)="getHeroByURI(character.resourceURI)">
+            Ver herói
+          </button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-card>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando mais HQs...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
